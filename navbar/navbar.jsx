@@ -12,11 +12,14 @@
 
 // <--navBar.jsx-->
 function NavBar(props) {
+    const [clicks, setClicks] = React.useState([]);
+    console.log(`clicks: ${clicks}`)
     const list = props.menuitems;
     const {Button} = ReactBootstrap;
 
     const handleClick = (e) => {
-        alert(`you clicked on ${e.target.innerHTML}aad`);
+        // alert(`you clicked on ${e.target.innerHTML}aad`);
+        setClicks([...clicks, e.target.innerHTML]);
     }
 
     const updatedList = list.map((listItems,index) =>{
